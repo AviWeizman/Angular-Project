@@ -1,0 +1,21 @@
+.button
+{
+    margin: 5px;
+}
+
+
+.card_frame_red
+{
+    border: 1px solid red;
+    margin: 10px; 
+    position: relative; 
+    min-width: 300px;
+}
+
+.card_frame_green
+{
+    border: 1px solid green;
+    margin: 10px; 
+    position: relative; 
+    min-width: 300px;
+}

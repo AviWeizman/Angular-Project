@@ -1,0 +1,10 @@
+.datacard
+{
+    margin: 10px;
+    position: relative;
+    min-width: 300px;
+}
+.button
+{
+    background-color: green;
+}

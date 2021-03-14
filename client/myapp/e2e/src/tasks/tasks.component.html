@@ -1,0 +1,14 @@
+<mat-card class="carddata">
+<mat-card-title>
+    <p style="font-size: 12px;"> task id <br>{{taskcard.id}}</p>
+</mat-card-title>
+<mat-card-content>
+    {{taskcard.title}}
+</mat-card-content>
+<mat-card-actions>
+    <button class="button" (click) = "taskCompleted()" [disabled]= "taskcard.completed" (click) = "taskCompleted()"></button>
+
+</mat-card-actions>
+</mat-card>
+  
+

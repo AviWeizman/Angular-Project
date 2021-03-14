@@ -1,0 +1,23 @@
+.button
+{
+    margin: 10px;
+}
+
+.cardstyle
+{
+    margin: 10px;
+    top: 10px;
+    left: 10px;
+    max-width: 400px;
+}
+.data-card
+{
+    margin: 10px; 
+    position: relative; 
+    min-width: 300px;
+}
+
+.grid-tile
+{
+    overflow: scroll;
+}

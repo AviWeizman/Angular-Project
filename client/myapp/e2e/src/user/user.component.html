@@ -1,0 +1,45 @@
+<mat-card [ngClass]="[userTasks(user)? 'card_frame_green':'card_frame_red']">
+<form #f = "ngForm">
+<table (click)="$event.stopPropagation()">
+<tr>
+    <th>Name:</th>
+    <td>
+      <input type="text" name="name"  [(ngModel)] = "user.name">
+    </td>
+</tr>
+<tr>
+    <th>Email:</th>
+    <td>
+        <input type="text" name="Email" [(ngModel)] = "user.email">
+    </td>
+</tr>
+</table>
+<div  (click)="$event.stopPropagation()">
+    <button class="button" color = "primary" (click) = "closeInfo()">more info</button>
+    <button class="button" color = "accent" style="position: relative; left: 30px;" (click) = "updateUser()">update</button>
+    <button class="button" color = "warn" style="position: relative; left: 30px;" (click) = "deleteUser()">delete</button>
+</div>
+<div *ngIf = "moreInfo" (click) = "$event.stopPropagation()">
+  <table>
+      <tr>
+          <th>street:</th>
+          <td>
+              <input type="text" name="street" [(ngModel)] = "user.street">
+          </td>
+      </tr>
+      <tr>
+          <th>city:</th>
+          <td>
+              <input type="text" name= "city" [(ngModel)] = "user.city">
+          </td>
+      </tr>
+      <tr>
+          <th>zipcode</th>
+          <td>
+              <input type="text" name="zipcode" [(ngModel)] = "user.zipcode">
+          </td>
+      </tr>
+  </table>
+</div>
+</form>
+</mat-card>

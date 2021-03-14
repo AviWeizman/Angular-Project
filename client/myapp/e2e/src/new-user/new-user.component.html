@@ -1,0 +1,42 @@
+<mat-card class="card_style">
+    <mat-card-header>
+       <h2>new user</h2>
+    </mat-card-header>
+    <mat-card-content>
+   <form #f = "ngForm" (ngSubmit) = "adduser()">
+       <table>
+           <tr>
+               <th>name :</th>
+               <td>
+                   <input type="text" name="username" [(ngModel)]= "newuser.Name">
+               </td>
+           </tr>
+           <th>Email:</th>
+           <td>
+               <input type="text" name="email" [(ngModel)]="newuser.Email">
+           </td>
+       
+       <tr>
+           <th>Street:</th>
+           <td>
+               <input type="text" name="street" [(ngModel)]="newuser.Street"> 
+           </td>
+       </tr>
+       <tr>
+           <th>City:</th>
+           <td>
+               <input type="text" name="city" [(ngModel)]="newuser.City">
+           </td>
+       </tr>
+       <tr>
+           <th>ZipCode:</th>
+           <td>
+               <input type="text" name="zip" [(ngModel)]="newuser.Zipcode">
+           </td>
+       </tr>
+   </table>
+   <button class="button" >Add</button>
+
+    </form>
+</mat-card-content>
+</mat-card>

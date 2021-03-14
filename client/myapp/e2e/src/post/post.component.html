@@ -1,0 +1,11 @@
+<mat-card class="datacard">
+    <mat-card-header>
+        <h3 [innerHTML]="postcard.title"></h3>
+    </mat-card-header>
+<mat-card-subtitle>
+    <p style="font-size: 12px;">post id <br>{{postcard.id}}</p>
+</mat-card-subtitle>
+<mat-card-content  [innerHTML] = "postcard.body">
+</mat-card-content>
+</mat-card>
+

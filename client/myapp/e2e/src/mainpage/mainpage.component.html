@@ -1,0 +1,32 @@
+
+<div class="border">
+    <mat-card class="cardstyle">
+
+        <mat-card-content>
+            <mat-card-header>
+    <form #f = "ngForm">
+        search : <input type="text" name="search" [(ngModel)] = "searchUser" (keyup) = "searchfor()">
+        <button (click) = "tasksAndposts = false; newUser = !newUser" class="button"></button>
+    </form>
+            </mat-card-header>
+
+<button (click) = "addNewUser()">Add</button>
+<div *ngFor = "let user of users">
+<app-user class="userCard"[userid] = "user.id" (notify) = "visibleTasksPosts(user,$event)"></app-user>
+</div>
+</mat-card-content>
+</mat-card>
+
+<!--new user-->
+
+<div *ngIf = "newUser">
+<app-new-user (notify) = "newUser=$event"></app-new-user>
+</div>
+<!--show tasks and posts-->
+<div *ngIf = "tasksAndposts">
+   <app-tasksAndPosts [currentUser] ="currentUser"></app-tasksAndPosts>
+  
+</div>
+
+
+        

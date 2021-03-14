@@ -1,0 +1,13 @@
+.card_style
+{
+    margin: 10px;
+    
+    top: 10px;
+    left: 10px;
+    max-width: 400px;
+}
+
+.buttons
+{
+    margin: 10px;
+}

@@ -1,0 +1,55 @@
+
+<!--task card-->
+
+<div>
+    <mat-card class="cardstyle">
+      <mat-card-header>
+          <h2>{{showuser.Name}}</h2>
+      </mat-card-header>
+      <mat-card-content>
+          <div *ngFor = "let task of showuser.Tasks">
+              <app-tasks [taskscard] ="task" [user] = "showuser" ></app-tasks>
+          </div>
+          <mat-card-actions>
+              <button class="button" color = "primary" (click) ="newtaskfocus=!newtaskfocus">add task</button>
+              <mat-card *ngIf = "newtaskfocus">
+               <mat-card-content>
+                   <form #f = "ngForm" (ngSubmit) = "addTask() ; f.reset(); newtaskfocus = !newtaskfocus">
+                       <textarea [(ngModel)] = "newtask.title"></textarea>
+                    <button class="taskcardbutton" >task</button>
+                    <button class="taskcardbutton"  (click) = "f.reset(); newtaskfocus = !newtaskfocus"></button>
+                   </form>
+               </mat-card-content>
+              </mat-card>
+              </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+
+    <!--post card-->
+    <mat-card class="cardstyle">
+        <mat-card-header>
+            <h1>{{showuser.Name}} post</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <div *ngFor = "let post of showuser.Posts">
+                <app-post [postcard] = "post" [user] = "showuser"></app-post>
+
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="button" (click) = "newpostfocus = !newpostfocus">add post</button>
+        </mat-card-actions>
+        <mat-card *ngIf = "newpostfocus"> 
+            <form #f = "ngForm" (ngSubmit) = "addPost() ; f.reset() ; newpostfocus = !newpostfocus">
+             Title : <br>
+             <input type="text" [(ngModel)] = "newposts.title"><br>
+             post body : <br>
+             <textarea [(ngModel)] = "newposts.body"></textarea><br>
+             <button class="button">post</button>
+             <button class="button" (click) = "f.reset() ; newpostfocus = !newpostfocus"></button>
+            </form>
+        </mat-card>
+
+    </mat-card>
+</div>
+
